@@ -1,0 +1,24 @@
+<ng-template let-row="rowInfo" #authorList>
+  <ul *ngIf="row">
+    <li *ngFor="let author of row.rowData.authors" (click)="highlight(author)">
+      <p
+        authorHighlighter
+        [selectedAuthor]="selectedAuthor"
+        [targetAuthor]="author"
+      >
+        {{ author.name }}
+      </p>
+    </li>
+  </ul>
+</ng-template>
+
+<ag-grid-angular
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  class="ag-theme-alpine"
+  [rowData]="rowData"
+  (gridReady)="onGridReady($event)"
+  (firstDataRendered)="dataRendered($event)"
+  style="width:100vh;height:100vw"
+>
+</ag-grid-angular>

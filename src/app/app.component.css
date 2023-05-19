@@ -1,0 +1,9 @@
+p {
+  font-family: Lato;
+}
+
+::ng-deep .ag-theme-alpine .ag-cell {
+  word-break: break-all !important;
+  white-space: normal !important;
+  line-height: unset !important;
+}
